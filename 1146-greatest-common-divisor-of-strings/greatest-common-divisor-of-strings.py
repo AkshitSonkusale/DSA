@@ -1,0 +1,9 @@
+class Solution(object):
+    def gcdOfStrings(self, str1, str2):
+        if str1 + str2 != str2 + str1:
+            return ""
+        a, b = len(str1), len(str2)
+        while b:
+            a, b = b, a % b
+        g = a
+        return str1[:g]
